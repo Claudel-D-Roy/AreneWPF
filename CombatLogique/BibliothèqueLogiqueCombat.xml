@@ -1,0 +1,770 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BibliothèqueLogiqueCombat</name>
+    </assembly>
+    <members>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient la logique de l'arène de combat   
+            Date:  2002-05-26   
+            <code>
+            Archer _archer = new Archer();  
+            Chevalier _chevalier = new Chevalier();  
+            Blanc _blanc = new Blanc();  
+            Noir _noir = new Noie();  
+            </code>
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._NomDémon">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Liste de nom pour les démons du magicien noir  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._NomInvocation">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Liste de nom pour les loups du magicien blanc  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._NomArcher">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Liste de nom pour les archers  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._NomChevalier">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Liste de nom pour les chevaliers  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._NomBlanc">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Liste de nom pour les magiciens blancs  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._NomNoir">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval   
+            Description: Liste de nom pour les magiciens noirs  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._listPersonnage">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval
+            Description: Liste qui contient les huits personnages  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._Archer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval   
+            Description: Nouvelle objet pour initialiser les propriétés de bases  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._Chevalier">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval    
+            Description: Nouvelle objet pour initialiser les propriétés de bases  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._Noir">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval   
+            Description: Nouvelle objet pour initialiser les propriétés de bases  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._Blanc">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval   
+            Description: Nouvelle objet pour initialiser les propriétés de bases  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._sAttaquant">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval   
+            Description: Constante pour déterminé le bonus d'attaque de chaque personnage.  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._sDéfenseur">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval   
+            Description: Constante pour déterminé le bonus d'attaque de chaque personnage.  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène._FinDuJeux">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval   
+            Description: Constante pour déterminé si le niveau 10 est atteint.  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène.CréationDesÉquipes">
+            <summary>
+            Auteur : Claudel D. Roy et Mathieu Duval  
+            Description : Permet de créé les équipes de façon aléatoire et remet la liste   
+                          à zéro lors du recommencement de la parti.
+            Date : 2022-05-26    
+            <code>
+            
+              _listPersonnage.Add(new Archer()  
+                  {  
+                    Nom = "Archer " + _NomArcher[i],   
+                    Niveau = 1,  
+                    Expérience = 0,  
+                    NbFlèches = 100,  
+                    PointVie = 17  
+                  });  
+            //Un for contient toute les classes possibles, il compte jusqu'à temps que la liste soit complète.  
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène.AttaquerUnTourPersonnage">
+            <summary>
+            Auteur : Claudel D. Roy et Mathieu Duval  
+            Description : Permet un tour complet, les huits personnages s'attaque un versus un.  
+            Date : 2022-05-26  
+            <code>
+                iDésAttaquant = _listPersonnage[iPosPerso1].Attaquer();  
+                iDésDéfence = _listPersonnage[iPosPerso1].Defendre();  
+                iDésAttaquant2 = _listPersonnage[iPosPerso2].Attaquer();  
+                iDésDéfence2 = _listPersonnage[iPosPerso2].Defendre();  
+                //La méthode attaquer() et défendre() provient de la classes Personnages,   
+                //elle contient les dés d'attaque et la classe d'armure de chaque personnage.  
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène.AttaquerPersonnageNv10">
+            <summary>
+            Auteur : Claudel D. Roy et Mathieu Duval  
+            Description : Permet de l'action de la case à cocher "tout" dans le xaml.  
+            Date : 2022-05-26 
+            <code>
+                   do  
+                    {  
+                        MélangerListe();  
+                        AttaquerUnTourPersonnage();  
+                        
+                    } while (!_FinDuJeux);  
+                    
+                   _FinDuJeux = true;  
+            
+            // Une boucle do/while et utiliser pour faire la méthode MélangerListe() et AttaquerUnTourPersonnage()    
+            // jusqu'à temps qu'un personnage ait atteint le niveau 10.  
+            </code> 
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène.RéinitialiserPointDeVie">
+            <summary>
+            Auteur : Claudel D. Roy et Mathieu Duval  
+            Description : Permet de réinitialiser les points de vie après chaque combat.  
+            Date : 2022-05-26 
+            <code>
+                   
+                       if (_listPersonnage[i].Nom.StartsWith("Archer"))  
+                           _listPersonnage[i].PointVie = _Archer.PointVie;  
+                       else if (_listPersonnage[i].Nom.StartsWith("Chevalier"))  
+                           _listPersonnage[i].PointVie = _Chevalier.PointVie;  
+                       else if (_listPersonnage[i].Nom.StartsWith("Noir"))  
+                           _listPersonnage[i].PointVie = _Noir.PointVie;  
+                       else if (_listPersonnage[i].Nom.StartsWith("Blanc"))  
+                           _listPersonnage[i].PointVie = _Blanc.PointVie;  
+               //Une boucle for est utilisé dans cette méthode pour remettre les points     
+               //de vie des personnages à leur état initiale.
+            </code> 
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène.MélangerListe">
+            <summary>
+            Auteur : Claudel D. Roy et Mathieu Duval  
+            Description : Permet de mélanger le liste des personnages de façon aléatoire.  
+            Date : 2022-05-26 
+            <code>
+            
+            int iAléatoire = _rdn.Next(0, 7);    
+            ListePourAléatoire.Add(iAléatoire);  
+            //Plusieurs boucle for sont utiliser pour avoir une liste de nombre aléatoire.    
+            //Ces nombres sont associés au position des personnages dans la liste et de ce fait,   
+            //mélange la liste des personnages.    
+            
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène.GénéréAttaque">
+            <summary>
+            Auteur : Claudel D. Roy et Mathieu Duval  
+            Description : Permet de déterminé le nombre du dés 20 et les bonus d'attaque des personnages.  
+            Date : 2022-05-26 
+            <code>
+             int iDés20 = _rdn.Next(1, 21);  
+             return iDés20;  
+             //Plusieurs if sont utiliser dans cette méthodes pour parcourir les    
+             //possibilités pour les bonus de personnages.   
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Arènes.LogiqueArène.AugmenterNiveau">
+            <summary>
+            Auteur : Claudel D. Roy et Mathieu Duval  
+            Description : Permet d'augmenter les niveaux des personnages.  
+            Date : 2022-05-26 
+            <code>
+             int Niveau = _listPersonnage[i].Niveau;  
+              //Deux boucle for sont utiliser pour parcourir chaque personnage et   
+             //modifier le niveau et les bonus de vie en conséquence.  
+            </code>
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Archer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient les spécification de l'archer.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Archer.Flèches">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Énumération pour trouver quel est le bonus de flèche accordé à l'archer.  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Archer.Flèches.Rien">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Ne donne aucun bonus.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Archer.Flèches.Double">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de flèche double.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Archer.Flèches.Tripple">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de flèche tripple.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Archer.NbFlèches">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le nombre de flèches.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Archer.Flèche">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient l'énumération des flèches.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Archer.Attaquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet à l'archer d'attaquer un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+            int iDés = 0;
+            int iDés8 = _rdm.Next(1, 9);
+            int iFlèches = _rdm.Next(0, 3);
+            //Bonus de flèche + iDés8 --> iDés
+             return iDés;
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Archer.Defendre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet à l'archer de ce défendre contre un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+               int iDéfend = _rdm.Next(0, 3);  
+               int Armure = 9;  
+               ClasseArmure = iClasseArmure;  
+               return iClasseArmure;  
+               //Un switch est utiliser déterminé les bonus optenu.   
+               //Ils sont par la suite ajoutés à la classe d'armure  
+            </code>
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Blanc">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient les spécification du magicien blanc.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Blanc.Invocation">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Énumération pour trouver quel est le bonus de l'invocation accordé au magicien blanc.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Blanc.Invocation.Attaquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus d'attaque.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Blanc.Invocation.Défendre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de défence.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Blanc.NomLoup">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet de donner un nombre au bonus du loup.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Blanc.Invoquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet d'appeler l'énumération.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Blanc.Attaquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet au magicien blanc d'attaquer un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+             int iSort = _rdm.Next(0, 4);  
+             int iPotions = _rdm.Next(0, 3);  
+             int iLoup = _rdm.Next(0, 2);  
+             iDésDouble1 = _rdm.Next(1, 5);  
+             iDésDouble2 = _rdm.Next(1, 5);  
+             int iDés2d4 = iDésDouble1 + iDésDouble2;  
+             //Tout les bonus sont additionés et ajouter au iDés.  
+             return iDés;  
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Blanc.Defendre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet au magicien blanc de ce défendre contre un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+               int Armure = 10;  
+               ClasseArmure = iClasseArmure;  
+               return iClasseArmure;  
+            </code>
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient les spécification du chevalier.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.AttaqueChevals">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Énumération pour trouver quel est le bonus du cheval accordé au chevalier.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.AttaqueChevals.Rien">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Ne donne aucun bonus.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.AttaqueChevals.Charger">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de charge au cheval.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.AttaqueChevals.Frapper">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de frappe au cheval.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.Cheval">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet de mettre une valeur au bonus du cheval.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.AttaqueCheval">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet de mettre une valeur au bonus du cheval.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.Attaquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet au chevalier d'attaquer un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+            int iDés = 0;  
+            int iDés8 = _rdm.Next(1, 9);  
+            int iChevalAttaque = _rdm.Next(0, 3);  
+            //Bonus du cheval + iDés8 --> iDés  
+             return iDés;  
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.Defendre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet au chevalier de ce défendre contre un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+               int iDéfend = _rdm.Next(0, 3);
+               int Armure = 11;
+               iClasseArmure = Armure + Défence;
+               ClasseArmure = iClasseArmure;
+               return iClasseArmure;
+               //Un switch est utiliser déterminé les bonus optenu. 
+               //Ils sont par la suite ajoutés à la classe d'armure.  
+            </code>
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient les spécification des guerriers.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.Défend">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Énumération qui contient les bonus de défences.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.Défend.Rien">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Ne donne aucun bonus.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.Défend.Bouclier">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de défence.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.Défend.Éviter">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description:  Donne un bonus de défence.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.Défend.Intimide">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description:  Donne un bonus de défence.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.Défence">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le nombre qui est associé au bonus de défence.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.NomDéfence">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient l'énumération qui est associé au bonus de défence.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Magicien">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient les spécification du magicien.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Potions">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Énumération pour trouver quel est le bonus de potion accordé au magicien.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Potions.Rien">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Ne donne aucun bonus.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Potions.Mana">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de vie.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Potions.Vie">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de mana.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Sorts">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Énumération pour trouver quel sont les sorts accordés au magicien.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Sorts.Feu">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Sort de feu.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Sorts.Électricité">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Sort d'éléctrcité.     
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Sorts.Terre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Sort de terre.  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Sorts.Eau">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Sort d'eau.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Sort">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet d'appeler l'énumération.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Potion">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet d'appeler l'énumération.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Mana">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet de contenir le nombre de mana.  
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Noir">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient les spécification du magicien noir.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Noir.Demon">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Énumération pour trouver quel est le bonus du démon accordé au magicien blanc.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Noir.Demon.Attaquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus d'attaque.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="F:BibliothèqueLogiqueCombat.Models.Personnages.Noir.Demon.Défendre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Donne un bonus de défence.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Noir.NomDemon">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet de donner un nombre au bonus du démon.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Noir.AttaqueDémon">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet d'appeler l'énumération.   
+            Date:  2002-05-26  
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Noir.Attaquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet au magicien noir d'attaquer un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+            int iDés10 = _rdm.Next(1, 11);
+            int iDémon = _rdm.Next(0, 2);
+            int iSort = _rdm.Next(0, 4);
+            int iPotions = _rdm.Next(0, 3);
+             //Tout les bonus sont additionés et ajouter au iDés.  
+             return iDés;  
+            </code>
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Noir.Defendre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Méthode qui permet au magicien noir de ce défendre contre un autre joueur. 
+            Date:  2002-05-26   
+            <code>
+               int Armure = 8;
+               ClasseArmure = iClasseArmure;
+               return iClasseArmure;
+            </code>
+            </summary>
+        </member>
+        <member name="T:BibliothèqueLogiqueCombat.Models.Personnages.Personnage">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Classe qui contient les spécification des personnages.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.Nom">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le nom du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.Niveau">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le niveau du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.Expérience">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient l'expérience du personnage.    
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.ClasseArmure">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient la classe d'armure du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.PointVie">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient les points de vie du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.BonusAttaque">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le bonus d'attaque du personnage.   
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.DommageMax">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le maximum de dommage du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.Victoire">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le nombre de victoire du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.Défaites">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le nombre de défaite du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="P:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.NbAttaque">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Contient le nombre d'attaque du personnage.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.Attaquer">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet de donner la méthode Attauqer(); à tous les personnages.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+        <member name="M:BibliothèqueLogiqueCombat.Models.Personnages.Personnage.Defendre">
+            <summary>
+            Auteur: Claudel D. Roy et Mathieu Duval  
+            Description: Permet de donner la méthode Defendre(); à tous les personnages.  
+            Date:  2002-05-26   
+            </summary>
+        </member>
+    </members>
+</doc>

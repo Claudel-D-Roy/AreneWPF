@@ -1,0 +1,91 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CombatWPF"
+        xmlns:Personnages="clr-namespace:BibliothèqueLogiqueCombat.Models.Personnages;assembly=BibliothèqueLogiqueCombat" xmlns:Arènes="clr-namespace:BibliothèqueLogiqueCombat.Models.Arènes;assembly=BibliothèqueLogiqueCombat" x:Name="FrmMain" x:Class="CombatWPF.MainWindow"
+        mc:Ignorable="d"
+        Title="L'arène" Height="693" Width="1431">
+    <Grid x:Name="GrdMain">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF3A0808" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ListView x:Name="lstStats" HorizontalAlignment="Left" Height="520" Margin="701,22,0,0" VerticalAlignment="Top" Width="701" Background="#FF3D3C3C" Foreground="White" BorderBrush="White" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}"/>
+                    <GridViewColumn Header="Niveau" DisplayMemberBinding="{Binding Niveau}"/>
+                    <GridViewColumn Header="Expérience" DisplayMemberBinding="{Binding Expérience}"/>
+                    <GridViewColumn Header="Classe armure" DisplayMemberBinding="{Binding ClasseArmure}"/>
+                    <GridViewColumn Header="Point de vie" DisplayMemberBinding="{Binding PointVie}"/>
+                    <GridViewColumn Header="Bonus d'attaque" DisplayMemberBinding="{Binding BonusAttaque}"/>
+                    <GridViewColumn Header="Dommage Max" DisplayMemberBinding="{Binding DommageMax}"/>
+                    <GridViewColumn Header="Victoire" DisplayMemberBinding="{Binding Victoire}"/>
+                    <GridViewColumn Header="Défaite" DisplayMemberBinding="{Binding Défaites}"/>
+                    
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Button x:Name="btnCombattre" Content="Combattre" HorizontalAlignment="Left" Margin="700,569,0,0" VerticalAlignment="Top" Height="44" Width="162" Foreground="White" Background="Black" Click="btnCombattre_Click"/>
+        <Button x:Name="btnSauvegarder" Content="Sauvegarder" HorizontalAlignment="Left" Margin="1240,569,0,0" VerticalAlignment="Top" Height="44" Width="162" Foreground="White" Background="Black" Click="btnSauvegarder_Click"/>
+        <Button x:Name="btnCharger" Content="Charger" HorizontalAlignment="Left" Margin="1062,569,0,0" VerticalAlignment="Top" Height="44" Width="162" Foreground="White" Background="Black" Click="btnCharger_Click"/>
+        <Button x:Name="btnRéinitialiser" Content="Réinitialiser" HorizontalAlignment="Left" Margin="883,569,0,0" VerticalAlignment="Top" Height="44" Width="162" Foreground="White" Background="Black" Click="btnRéinitialiser_Click"/>
+        <CheckBox x:Name="chkTout" Content="Tout" HorizontalAlignment="Left" Margin="700,624,0,0" VerticalAlignment="Top" Height="34" Width="62" FontSize="16" Foreground="White" FontFamily="Baskerville Old Face"/>
+        <Label x:Name="lbl1" Content="Combat &#xA;numéro &#xA;     1­" HorizontalAlignment="Left" Height="65" Margin="612,68,0,0" VerticalAlignment="Top" Width="64" Foreground="#FFFCFCFC" FontFamily="Baskerville Old Face" FontSize="16"/>
+        <Label x:Name="lbl2" Content="Combat &#xA;numéro &#xA;     2­" HorizontalAlignment="Left" Height="68" Margin="612,226,0,0" VerticalAlignment="Top" Width="64" Foreground="#FFFCFCFC" FontFamily="Baskerville Old Face" FontSize="16"/>
+        <Label x:Name="lbl3" Content="Combat &#xA;numéro &#xA;     3­" HorizontalAlignment="Left" Height="63" Margin="612,379,0,0" VerticalAlignment="Top" Width="64" Foreground="#FFFCFCFC" FontFamily="Baskerville Old Face" FontSize="16"/>
+        <Label x:Name="lbl4" Content="Combat &#xA;numéro &#xA;     4­" HorizontalAlignment="Left" Height="74" Margin="612,525,0,0" VerticalAlignment="Top" Width="64" Foreground="#FFFCFCFC" FontFamily="Baskerville Old Face" FontSize="16"/>
+        <Grid x:Name="GrdImages" HorizontalAlignment="Left" Height="615" VerticalAlignment="Center" Width="296" Margin="160,0,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="lblImage1" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3" Grid.Column="0" Grid.Row="0"/>
+            <Label x:Name="lblImage2" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3"  Grid.Column="1" Grid.Row="0" Margin="0,0,0,154" Grid.RowSpan="2"/>
+            <Label x:Name="lblImage3" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3"  Grid.Column="0" Grid.Row="1"/>
+            <Label x:Name="lblImage4" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3"  Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="lblImage5" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3"  Grid.Column="0" Grid.Row="2"/>
+            <Label x:Name="lblImage6" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3"  Grid.Column="1" Grid.Row="2"/>
+            <Label x:Name="lblImage7" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3"  Grid.Column="0" Grid.Row="3"/>
+            <Label x:Name="lblImage8" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="White" BorderThickness="3,3,3,3"  Grid.Column="1" Grid.Row="3"/>
+        </Grid>
+        <Grid x:Name="grdGauche" HorizontalAlignment="Left" Height="610" Margin="10,31,0,0" VerticalAlignment="Top" Width="134">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblPersonnage1" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Grid.Row="0"/>
+            <Label x:Name="lblPersonnage3" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Grid.Row="1"/>
+            <Label x:Name="lblPersonnage5" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Grid.Row="2"/>
+            <Label x:Name="lblPersonnage7" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Grid.Row="3"/>
+        </Grid>
+        <Grid x:Name="grdDroite" HorizontalAlignment="Left" Height="610" Margin="473,0,0,0" VerticalAlignment="Center" Width="134">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblPersonnage2" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"  Grid.Row="0"/>
+            <Label x:Name="lblPersonnage4" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"  Grid.Row="1"/>
+            <Label x:Name="lblPersonnage6" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"  Grid.Row="2"/>
+            <Label x:Name="lblPersonnage8" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"  Grid.Row="3"/>
+        </Grid>
+
+    </Grid>
+</Window>

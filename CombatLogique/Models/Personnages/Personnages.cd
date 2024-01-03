@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BibliothèqueLogiqueCombat.Models.Personnages.Archer">
+    <Position X="3.75" Y="8.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="BibliothèqueLogiqueCombat.Models.Personnages.Archer.Flèches" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnages\Archer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAABCAAAAQAAAAAAgAAA=</HashCode>
+      <FileName>Models\Personnages\Archer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BibliothèqueLogiqueCombat.Models.Personnages.Blanc">
+    <Position X="8.25" Y="9.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="BibliothèqueLogiqueCombat.Models.Personnages.Blanc.Invoquer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnages\Blanc.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAARAAAAAQAAAAAAgAAA=</HashCode>
+      <FileName>Models\Personnages\Blanc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BibliothèqueLogiqueCombat.Models.Personnages.Chevalier">
+    <Position X="6" Y="8.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="BibliothèqueLogiqueCombat.Models.Personnages.Chevalier.AttaqueChevals" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnages\Chevalier.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAQAABAAAAAQAAAAAAgAAA=</HashCode>
+      <FileName>Models\Personnages\Chevalier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BibliothèqueLogiqueCombat.Models.Personnages.Guerrier">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="BibliothèqueLogiqueCombat.Models.Personnages.Guerrier.Défend" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnages\Guerrier.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Personnages\Guerrier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BibliothèqueLogiqueCombat.Models.Personnages.Magicien">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Potions" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnages\Magicien.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="BibliothèqueLogiqueCombat.Models.Personnages.Magicien.Sorts" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnages\Magicien.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Personnages\Magicien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BibliothèqueLogiqueCombat.Models.Personnages.Noir">
+    <Position X="10.5" Y="9.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="BibliothèqueLogiqueCombat.Models.Personnages.Noir.Demon" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Models\Personnages\Noir.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAACAAAABAAAAAQAAAAAAgAAA=</HashCode>
+      <FileName>Models\Personnages\Noir.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BibliothèqueLogiqueCombat.Models.Personnages.Personnage">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAACAAAAAgAAAAEAAAAACAAgAAASAAAAICgEAA=</HashCode>
+      <FileName>Models\Personnages\Personnage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

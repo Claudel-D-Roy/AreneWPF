@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Archer_Droit.png" />
+    <None Remove="Images\Archer_Gauche.png" />
+    <None Remove="Images\Blanc_Droit.png" />
+    <None Remove="Images\Blanc_Gauche.png" />
+    <None Remove="Images\chevalier_Droit.png" />
+    <None Remove="Images\chevalier_Gauche.png" />
+    <None Remove="Images\Noir_Droit.png" />
+    <None Remove="Images\Noir_Gauche.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CombatLogique\BibliothèqueLogiqueCombat.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Archer_Droit.png" />
+    <Resource Include="Images\Archer_Gauche.png" />
+    <Resource Include="Images\Blanc_Droit.png" />
+    <Resource Include="Images\Blanc_Gauche.png" />
+    <Resource Include="Images\chevalier_Droit.png" />
+    <Resource Include="Images\chevalier_Gauche.png" />
+    <Resource Include="Images\Noir_Droit.png" />
+    <Resource Include="Images\Noir_Gauche.png" />
+  </ItemGroup>
+
+</Project>

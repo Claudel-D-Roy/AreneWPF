@@ -1,0 +1,12 @@
+﻿################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/CombatLogique/bin/Debug/net5.0
+/CombatLogique/obj
+/CombatWPF/.vs/CombatWPF/v16
+/CombatWPF/bin/Debug/net5.0-windows
+/CombatWPF/obj
+/CombatWPF/CombatWPF.csproj.user
+/.vs/TP4/v17
+/.vs/TP4/FileContentIndex
